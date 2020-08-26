@@ -2,7 +2,6 @@
 
 A Python program to fetch all subdomains from crt.sh print out the ones that are unique.
 
-
 Usage:
 ```
 ./crtdump.py <domain> or
