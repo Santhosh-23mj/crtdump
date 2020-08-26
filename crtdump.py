@@ -48,7 +48,7 @@ def sortOutData(subdomains):
 
 # Function to print out the subdomains
 
-def printResult(domains,domain):
+def printResult(domains):
     for host in domains:
         print(host)
     print()
