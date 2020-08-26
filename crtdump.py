@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import argparse
 import mechanize
 from bs4 import BeautifulSoup
 
@@ -55,10 +56,13 @@ def printResult(domains,domain):
 # Main Function
 
 def main():
-	recon      = input("Enter the domain to lookup : ")
-	url        = "https://crt.sh/?q="+recon
+	parser     = argparse.ArgumentParser()
+	parser.add_argument("domain", help = "Specify the domain to hunt the subdomains")
+	args       = parser.parse_args()
+
+	url        = "https://crt.sh/?q="+args.domain
 	webPage    = getPage(url)
-	subdomains = findData(webPage, recon)
+	subdomains = findData(webPage, args.domain)
 	result     = sortOutData(subdomains)
 	printResult(result)
 
